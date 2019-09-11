@@ -1,7 +1,7 @@
 # Create first file from template with vars defined below.
 data "template_file" "test" {
   template = "${file("files/test.txt.tpl")}"
-  
+
   vars = {
     test_string = "this is a file"
   }
@@ -19,14 +19,17 @@ data "template_file" "test2" {
 
 # Use a null resource to actually write the file.
 resource "null_resource" "write_file" {
-
   provisioner "local-exec" {
     command = <<EOT
-    echo "${data.template_file.test2.rendered}" > test_file.txt
+    echo "${data.template_file.test2.rendered}" > "${var.output_filename}"
     EOT
   }
 }
 
+variable "output_filename" {
+  description = "Path/name of output file"
+  default     = "output.txt"
+}
 
 output "test_file" {
   value = "${data.template_file.test2.rendered}"
