@@ -1,0 +1,12 @@
+{
+  "variable": [
+    {
+      "NAME" : [
+        {
+          "type": "string",
+          "default": "isa"
+        }
+      ]
+    }
+  ]
+}
