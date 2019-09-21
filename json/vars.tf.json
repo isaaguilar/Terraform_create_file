@@ -1,12 +1,8 @@
 {
-  "variable": [
-    {
-      "NAME" : [
-        {
-          "type": "string",
-          "default": "isa"
-        }
-      ]
+  "variable": {
+    "NAME" : {
+      "type": "string",
+      "default": "isa"
     }
-  ]
+  }
 }
