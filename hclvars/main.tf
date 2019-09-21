@@ -1,4 +1,4 @@
 variable "isa" {
-	description = "my name"
-	type = "string"
+  description = "my name"
+  type        = "string"
 }
