@@ -2,7 +2,7 @@ terraform {
   backend "consul" {
     address = "hashicorp-consul-server.default"
     scheme  = "http"
-    path    = "make_file"
+    path    = "terraform/state"
   }
 }
 
