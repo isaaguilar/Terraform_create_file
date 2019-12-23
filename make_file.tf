@@ -1,3 +1,12 @@
+terraform {
+  backend "consul" {
+    address = "hashicorp-consul-server.default"
+    scheme  = "http"
+    path    = "make_file"
+  }
+}
+
+
 # Create first file from template with vars defined below.
 data "template_file" "test" {
   template = "${file("files/test.txt.tpl")}"
